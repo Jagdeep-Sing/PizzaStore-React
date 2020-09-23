@@ -1,8 +1,19 @@
 import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 
+const GlobalStyle = createGlobalStyle`
+
+  body {
+    background-color: blue;
+  }
+
+`
 function App() {
   return (
-   <div>Welcome to pizza store</div>
+    <>
+      <GlobalStyle />
+      <div>Welcome to pizza store</div>
+   </>
   );
 }
 
