@@ -8,8 +8,11 @@ const MenuStyled = styled.div`
     height: 1000px;
 `
 export function Menu() {
-    return <MenuStyled> 
-                <h1>Menu</h1>
+    return (
+    <MenuStyled> 
+        {Object.entries(foods).map(([sectionName, foods]) => (
+            <>
+                <h1>{sectionName}</h1>
                 <FoodGrid>
                     {foods.map(food => (
                         <Food img={food.img}>
@@ -19,6 +22,9 @@ export function Menu() {
                         </Food>
                     ))}
                 </FoodGrid>
+            </>
+        ))}
+                
             
-            </MenuStyled>
+    </MenuStyled>);
 }
