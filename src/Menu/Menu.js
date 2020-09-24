@@ -16,7 +16,7 @@ export function Menu({setOpenFood}) {
                 <FoodGrid>
                     {foods.map(food => (
                         <Food img={food.img} onClick={() => {
-                            setOpenFood(food.name)
+                            setOpenFood(food)
                         }}>
                             <FoodLabel>
                                 {food.name}
