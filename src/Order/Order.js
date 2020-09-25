@@ -32,6 +32,9 @@ const OrderItem = styled.div`
 `;
 
 export function Order({orders}) {
+    const subtotal = orders.reduce((total, order) => {
+        return total + getPrice(order);
+    }, 0);
     return <OrderStyled>
                 {orders.length === 0 ?
                     ( <OrderContent>Order is empty</OrderContent>)
@@ -49,6 +52,11 @@ export function Order({orders}) {
                                     </OrderItem>
                                 </OrderContainer>
                             ))}
+                            <OrderItem>
+                                <div />
+                                <div>Sub-Total</div>
+                                <div>{formatPrice(subtotal)}</div>
+                            </OrderItem>
                         </OrderContent>)
                 }
                     <DialogFooter>
