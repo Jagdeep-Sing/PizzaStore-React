@@ -1,21 +1,19 @@
-import {useState} from 'react';
+import { useState } from "react";
 
 export function useQuantity(defaultQuantity) {
-    const [value, setValue] = useState(defaultQuantity || 1);
+  const [value, setValue] = useState(defaultQuantity || 1);
 
-
-function onChange(e) {
+  function onChange(e) {
     if (!(+e.target.value >= 1)) {
-        setValue(1);
-        return;
+      setValue(1);
+      return;
     }
     setValue(+e.target.value);
-}
+  }
 
-return {
+  return {
     value,
     setValue,
     onChange
-};
-
+  };
 }
